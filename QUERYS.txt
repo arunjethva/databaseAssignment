@@ -1,0 +1,101 @@
+Q1 - Select unique job from EMP table
+ANS - SELECT DISTINCT job FROM emp;
+
+
+Q2 - List the details of the emps in asc order of the Dptnos and desc of Jobs?
+ANS - SELECT  * FROM emp ORDER BY deptno;
+      SELECT * FROM emp ORDER BY job DESC;
+
+
+Q3 -  Display all the unique job groups in the descending order?
+ANS - SELECT DISTINCT job FROM emp ORDER BY  job DESC;
+
+
+Q4 - List the emps who joined before 1981. 
+ANS - SELECT * FROM emp WHERE hiredate <'1981-01-01';
+
+
+Q5 - List the Empno, Ename, Sal, Daily sal of all emps in the asc order of Annsal. 
+ANS - SELECT empno,ename,sal,comm FROM emp ORDER BY sal;
+
+
+Q6 - List the Empno, Ename, Sal, Exp of all emps working for Mgr 7369. 
+ANS - SELECT empno ,ename,sal FROM emp WHERE mgr= 7698;
+
+
+Q7 - Display all the details of the emps who’s Comm. Is more than their Sal?
+ANS - SELECT * FROM emp WHERE comm >sal;
+
+
+Q8 - List the emps who are either ‘CLERK’ or ‘ANALYST’ in the Desc order. 
+ANS - SELECT * FROM emp WHERE job ='clerk' OR job='analyst' ORDER BY job DESC ;
+
+
+Q9 - . List the emps Who Annual sal ranging from 22000 and 45000. 
+ANS - SELECT * FROM emp WHERE sal* 12 BETWEEN 22000 AND 45000;
+
+
+Q10 - List the Enames those are starting with ‘S’ and with five characters. 
+ANS - SELECT * FROM emp WHERE ename LIKE "%s____"; 
+
+
+Q11 - List the emps whose Empno not starting with digit78. 
+ANS - SELECT * FROM emp WHERE ename LIKE "%s____"; 
+
+
+Q12 - List all the Clerks of Deptno 20.
+ANS - select * from emp where job= "CLERK" and deptno =20;
+
+
+Q13 - List the Emps who are senior to their own MGRS.
+ANS -
+ 
+Q14 - List the Emps of Deptno 20 who’s Jobs are same as Deptno10.
+ANS -SELECT * FROM emp WHERE job="CLERK" AND deptno=20;
+
+
+Q15 - List the Emps who’s Sal is same as FORD or SMITH in desc order of Sal. 
+ANS - SELECT * FROM emp WHERE sal IN (SELECT sal FROM emp WHERE ename ='FORD' OR ename = "SMITH") ORDER BY sal DESC;
+
+
+Q16 - List the emps whose jobs same as SMITH or ALLEN. 
+ANS - SELECT * FROM emp WHERE  job IN(SELECT job FROM emp WHERE ename ='ALLEN' OR ename='SMITH');
+
+
+Q17 - Any jobs of deptno 10 those that are not found in deptno 20. 
+ANS - SELECT DISTINCT job FROM emp WHERE deptno = 10 AND job NOT IN (SELECT job FROM emp WHERE deptno =20);
+
+
+Q18 - Find the highest sal of EMP table. 
+ANS - SELECT MAX(sal) FROM emp;
+
+
+Q19 - Find details of highest paid employee. 
+ANS - SELECT *,MAX(sal) FROM emp;
+
+Q20 - Find the total sal given to the MGR. 
+ANS - SELECT SUM(sal) FROM emp WHERE job = 'MANAGER';
+
+
+Q21 - List the emps whose names contains ‘A’.
+ANS -SELECT * FROM emp WHERE ename LIKE '%A%';
+
+
+Q22 - Find all the emps who earn the minimum Salary for each job wise in ascending order. 
+ANS - SELECT job,ename ,sal FROM emp WHERE (job,sal) IN (SELECT job,MIN(sal)FROM emp GROUP BY job) ORDER BY job ,sal;	
+
+
+Q23 -  List the emps whose sal greater than Blake’s sal.
+ANS - SELECT * FROM emp WHERE sal> 2850;
+
+
+Q24 - Create view v1 to select ename, job, dname, loc whose deptno are same. 
+ANS -
+
+Q25 - Create a procedure with dno as input parameter to fetch ename and dname. 
+ANS -
+
+Q26 - Add column Pin with bigint data type in table student. 
+ANS -
+
+
